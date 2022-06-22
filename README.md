@@ -4,6 +4,12 @@ Run Prisma Queries in a REPL style console. Heavily inspired by the Rails Consol
 
 ## Usage
 
+- Install dependencies
+
+```sh
+npm i pretty-repl
+```
+
 - Copy the code in [`app.js`](./app.js) to a desired file in your exsisting project
 - **[OPTIONAL]** Configure the prisma client in your own way
 - Add a script in your `package.json` file.
