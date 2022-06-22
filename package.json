@@ -1,5 +1,5 @@
 {
-  "name": "@prisma-tools/console",
+  "name": "@prismatools/console",
   "version": "1.0.0",
   "description": "REPL style console for Prisma ORM, heavily inspired from Rails console",
   "main": "app.js",
