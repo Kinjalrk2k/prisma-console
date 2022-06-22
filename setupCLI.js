@@ -9,7 +9,7 @@ const options = commandLineArgs([
     name: "client",
     alias: "c",
     type: String,
-    defaultValue: path.join(__dirname, "./node_modules/@prisma/client"),
+    defaultValue: path.join(process.cwd(), "./node_modules/@prisma/client"),
   },
   {
     name: "help",
