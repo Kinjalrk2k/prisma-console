@@ -6,6 +6,10 @@ Run Prisma Queries in a REPL style console. Heavily inspired by the Rails Consol
 
 ![Screenshot](./docs/screenshot.png)
 
+### Forget Prisma Studio! 🤣
+
+![Screenshot 2](./docs/screenshot2.png)
+
 ## Usage
 
 - Install dependencies
