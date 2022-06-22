@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const commandLineArgs = require("command-line-args");
 const commandLineUsage = require("command-line-usage");
+const path = require("path");
 const chalk = require("chalk");
 
 const options = commandLineArgs([
@@ -8,7 +9,7 @@ const options = commandLineArgs([
     name: "client",
     alias: "c",
     type: String,
-    defaultValue: "./node_modules/@prisma/client",
+    defaultValue: path.join(__dirname, "./node_modules/@prisma/client"),
   },
   {
     name: "help",
@@ -33,7 +34,7 @@ const usage = commandLineUsage([
         type: String,
         typeLabel: "{underline path}",
         description: "Path to the Prisma generated client",
-        defaultValue: "./node_modules/@prisma/client",
+        defaultValue: path.join(__dirname, "./node_modules/@prisma/client"),
       },
       {
         name: "help",
