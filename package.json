@@ -1,0 +1,19 @@
+{
+  "name": "prisma-console",
+  "version": "1.0.0",
+  "description": "REPL style console for Prisma ORM, heavily inspired from Rails console",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "console": "node --experimental-repl-await ./app.js"
+  },
+  "author": "Kinjal Raykarmakar",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^3.15.2",
+    "pretty-repl": "^3.1.1"
+  },
+  "devDependencies": {
+    "prisma": "^3.15.2"
+  }
+}
