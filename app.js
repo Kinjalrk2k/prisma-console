@@ -1,5 +1,9 @@
+#!/usr/bin/env node
 const repl = require("pretty-repl");
-const { PrismaClient } = require("@prisma/client");
+const path = require("path");
+const { options } = require("./setupCLI");
+
+const { PrismaClient } = require(path.join(process.cwd(), options?.client));
 
 const prisma = new PrismaClient();
 

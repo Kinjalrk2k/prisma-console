@@ -1,16 +1,22 @@
 {
-  "name": "prisma-console",
-  "version": "1.0.0",
+  "name": "@prismatools/console",
+  "version": "1.0.4",
   "description": "REPL style console for Prisma ORM, heavily inspired from Rails console",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "console": "node --experimental-repl-await ./app.js"
   },
+  "bin": {
+    "console": "./app.js"
+  },
   "author": "Kinjal Raykarmakar",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^3.15.2",
+    "chalk": "^4.1.2",
+    "command-line-args": "^5.2.1",
+    "command-line-usage": "^6.1.3",
     "pretty-repl": "^3.1.1"
   },
   "devDependencies": {
