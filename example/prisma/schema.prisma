@@ -1,0 +1,79 @@
+// Schema for a fictional music streaming service
+// This service contains songs, albums, artists & playlists, and tracks user interactions with each of them
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String        @id @default(uuid())
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  name         String
+  email        String        @unique
+  interactions Interaction[]
+  playlists    Playlist[]
+}
+
+model Interaction {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  songId    String?
+  userId    String?
+  isLiked   Boolean  @default(false)
+  playCount Int
+  song      Song?    @relation(fields: [songId], references: [id])
+  user      User?    @relation(fields: [userId], references: [id])
+}
+
+model Song {
+  id           String        @id @default(uuid())
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  name         String
+  albumId      String?
+  artistId     String
+  length       Float
+  track        Int?
+  lyrics       String?
+  fileUrl      String
+  album        Album?        @relation(fields: [albumId], references: [id])
+  artist       Artist        @relation(fields: [artistId], references: [id])
+  interactions Interaction[]
+  playlist     Playlist[]
+}
+
+model Artist {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  songs     Song[]
+  albums    Album[]
+}
+
+model Album {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  cover     String
+  songs     Song[]
+  artists   Artist[]
+}
+
+model Playlist {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String?
+  name      String
+  user      User?    @relation(fields: [userId], references: [id])
+  songs     Song[]
+}

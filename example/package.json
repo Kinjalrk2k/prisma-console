@@ -1,0 +1,15 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "Example for @prismatools/console",
+  "main": "app.js",
+  "dependencies": {
+    "prisma": "^3.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kinjal Raykarmakar",
+  "license": "ISC"
+}
