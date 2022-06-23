@@ -3,6 +3,10 @@
   "version": "1.0.4",
   "description": "REPL style console for Prisma ORM, heavily inspired from Rails console",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kinjalrk2k/prisma-console.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "console": "node --experimental-repl-await ./app.js"
