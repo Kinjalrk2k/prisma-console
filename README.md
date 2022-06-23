@@ -1,4 +1,4 @@
-# prisma-console
+# @prismatools/console
 
 Run Prisma Queries in a REPL style console. Heavily inspired by the Rails Console
 
@@ -8,31 +8,16 @@ Run Prisma Queries in a REPL style console. Heavily inspired by the Rails Consol
 
 ## Usage
 
-- Install dependencies
+- From your project directory, run:
 
-```sh
-npm i pretty-repl
+```
+npx @prismatools/console@latest
 ```
 
-- Copy the code in [`app.js`](./app.js) to a desired file in your exsisting project
-- **[OPTIONAL]** Configure the prisma client in your own way
-- Add a script in your `package.json` file.
-  - Remember to use the `--experimental-repl-await` flag to support `await` syntax in the REPL console
-  - Dont forget to correctly set the file in place of `./app.js`
+- For setting a Prisma client path explicitly, use the `--client` or the `-c` flag
 
-```diff
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-+   "console": "node --experimental-repl-await ./app.js"
-  },
-  "author": "Kinjal Raykarmakar",
 ```
-
-- Run the console!
-
-```sh
-npm run console
+npx @prismatools/console@latest -c ./node_modules/@prisma/client
 ```
 
 ### Forget Prisma Studio! 🤣
