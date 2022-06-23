@@ -17,6 +17,12 @@ const options = commandLineArgs([
     type: Boolean,
     defaultValue: false,
   },
+  {
+    name: "version",
+    alias: "v",
+    type: Boolean,
+    defaultValue: false,
+  },
 ]);
 
 const usage = commandLineUsage([
@@ -42,6 +48,12 @@ const usage = commandLineUsage([
         type: Boolean,
         description: "This help page",
       },
+      {
+        name: "version",
+        alias: "v",
+        type: Boolean,
+        description: "Print the version",
+      },
     ],
   },
 ]);
@@ -56,6 +68,12 @@ if (!options?.client) {
 
 if (options?.help) {
   console.log(usage);
+  process.exit(0);
+}
+
+if (options?.version) {
+  const packageFile = require("./package.json");
+  console.log(packageFile?.version);
   process.exit(0);
 }
 
