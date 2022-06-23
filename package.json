@@ -1,6 +1,6 @@
 {
   "name": "@prismatools/console",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "REPL style console for Prisma ORM, heavily inspired from Rails console",
   "main": "app.js",
   "repository": {
