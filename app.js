@@ -7,6 +7,9 @@ const { PrismaClient } = require(path.join(process.cwd(), options?.client));
 
 const prisma = new PrismaClient();
 
+// workaround for https://github.com/prisma/prisma/issues/18292
+prisma[Symbol.for('nodejs.util.inspect.custom')] = 'PrismaClient';
+
 const replServer = repl.start({
   prompt: "◭ > ",
   useColors: true,
